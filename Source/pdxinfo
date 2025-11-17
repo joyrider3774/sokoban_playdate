@@ -1,0 +1,7 @@
+name=Playdoban
+author=Willems Davy aka Joyrider3774
+description=A Sokoban Engine For Playdate
+bundleID=com.joyrider3774.playdoban
+version=1.0
+imagePath=metadata
+buildNumber=1
