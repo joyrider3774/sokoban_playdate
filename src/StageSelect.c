@@ -365,7 +365,7 @@ void StageSelect()
 						{
 							for(Teller=SelectedLevel;Teller<InstalledLevels;Teller++)
 							{						
-								char* file1, file2;
+								char* file1, *file2;
 								pd->system->formatString(&file1,"levelpacks/%s._lev/level%d.lev", LevelPackName, Teller+1);
 								pd->system->formatString(&file2,"levelpacks/%s._lev/level%d.lev", LevelPackName,Teller);
 								pd->file->rename(file1, file2);
