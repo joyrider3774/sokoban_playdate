@@ -164,7 +164,7 @@ void SelectMusic(int musicFile)
                 playMusicFile("music/periwinkle", 0);
                 break;
             case musGame3:
-                playMusicFile("music/Puzzle Game 3", 0);
+                playMusicFile("music/Puzzle_Game_3", 0);
                 break;
         }
     }
