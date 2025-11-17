@@ -31,7 +31,6 @@ void setupGame()
 	GetStringId = -1;
 	GetStringX = 0;
 	GetStringY = 0;
-	bool GlobalSoundEnabled = true;
 	LevelEditorMode = false;
 	LevelHasChanged = false;
 	StageReload = false;

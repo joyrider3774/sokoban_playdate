@@ -12,7 +12,7 @@ extern LCDBitmap *IMGBackground,*IMGFloor,*IMGPlayer,*IMGBox,*IMGSpot,*IMGEmpty,
 extern LCDFont* font,* BigFont, *RobotoMedium;
 extern int GameState;
 extern int Selection,MusicCount,SelectedMusic,InstalledLevelPacksCount,InstalledLevels,SelectedLevel,SelectedLevelPack,UnlockedLevels,GetStringId,GetStringX,GetStringY;
-extern bool GlobalSoundEnabled,LevelEditorMode,LevelHasChanged,StageReload,ReloadMusic;
+extern bool LevelEditorMode,LevelHasChanged,StageReload,ReloadMusic;
 extern CWorldParts* WorldParts;
 extern CLevelPackFile *LevelPackFile;
 extern char *LevelPackName;

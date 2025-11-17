@@ -10,7 +10,7 @@ LCDBitmap* IMGBackground=NULL,*IMGFloor=NULL,*IMGPlayer=NULL,*IMGBox=NULL,*IMGSp
 LCDFont* font,* BigFont,*MonoFont, *RobotoMedium;
 int GameState = GSTitleScreenInit;
 int Selection=0, MusicCount=0,SelectedMusic=0,InstalledLevelPacksCount=0,InstalledLevels=0,SelectedLevel=0,SelectedLevelPack=0,UnlockedLevels=1,GetStringId = -1, GetStringX = 0, GetStringY = 0;
-bool GlobalSoundEnabled = true,LevelEditorMode=false,LevelHasChanged=false,StageReload=false,ReloadMusic=false;
+bool LevelEditorMode=false,LevelHasChanged=false,StageReload=false,ReloadMusic=false;
 CWorldParts* WorldParts;
 CLevelPackFile *LevelPackFile;
 char *LevelPackName = NULL;
