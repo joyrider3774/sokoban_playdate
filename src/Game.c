@@ -8,6 +8,7 @@
 
 #include "Menus.h"
 
+int buttonIgnoreFramesGame = 25;
 
 CWorldPart *Player;
 
@@ -163,10 +164,12 @@ void Game()
 
 		if (!Player->IsMoving)
 		{
-			if (currButtons & kButtonA)
+			if ((buttonIgnoreFramesGame <= 0) && (currButtons & kButtonA))
 			{
 				CWorldParts_HistoryGoBack(WorldParts);
 			}
+			else
+				buttonIgnoreFramesGame--;
 
 			if (!(currButtons & kButtonA) && (currButtons & kButtonRight))
 			{
@@ -174,6 +177,7 @@ void Game()
 				{
 					CWorldParts_HistoryAdd(WorldParts);
 				}
+				buttonIgnoreFramesGame = 0;
 				CWorldPart_MoveTo(Player, Player->PlayFieldX + 1, Player->PlayFieldY, false);
 			}
 			else
@@ -184,6 +188,7 @@ void Game()
 					{
 						CWorldParts_HistoryAdd(WorldParts);
 					}
+					buttonIgnoreFramesGame = 0;
 					CWorldPart_MoveTo(Player, Player->PlayFieldX - 1, Player->PlayFieldY, false);
 				}
 				else
@@ -194,6 +199,7 @@ void Game()
 						{
 							CWorldParts_HistoryAdd(WorldParts);
 						}
+						buttonIgnoreFramesGame = 0;
 						CWorldPart_MoveTo(Player, Player->PlayFieldX, Player->PlayFieldY - 1, false);
 					}
 					else
@@ -204,6 +210,7 @@ void Game()
 							{
 								CWorldParts_HistoryAdd(WorldParts);
 							}
+							buttonIgnoreFramesGame = 0;
 							CWorldPart_MoveTo(Player, Player->PlayFieldX, Player->PlayFieldY + 1, false);
 						}
 					}
@@ -227,6 +234,11 @@ void Game()
 	{
 		if(AskQuestionUpdate(&id, &response, false))
 		{
+			if (id == IDLevelInfo)
+			{
+				buttonIgnoreFramesGame = 25;
+			}
+
 			if(id == IDSolvedLevelLevelEditorMode)
 			{
 				if (response)
@@ -276,8 +288,13 @@ void Game()
 					}
 					else
 					{
-						pd->system->formatString(&FileName, "levelpacks/%s/level%d.lev", LevelPackName, SelectedLevel);
-						if (FileExists(FileName, true))
+						pd->system->formatString(&FileName, "levelpacks/%s._lev/level%d.lev", LevelPackName, SelectedLevel);
+						if (!FileExists(FileName, true))
+						{
+							pd->system->realloc(FileName, 0);
+							pd->system->formatString(&FileName, "levelpacks/%s/level%d.lev", LevelPackName, SelectedLevel);
+						}
+						if (FileExists(FileName, true) || FileExists(FileName, false))
 							CWorldParts_Load(WorldParts, FileName, true);
 						else
 							CWorldParts_LoadFromLevelPackFile(WorldParts, LevelPackFile, SelectedLevel, true);

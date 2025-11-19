@@ -11,7 +11,7 @@
 #include "pd_api.h"
 
 bool ShowPosition=true;
-int buttonIgnoreFrames = 25;
+int buttonIgnoreFramesLevelEditor = 25;
 
 CSelector *Selector;
 
@@ -89,7 +89,7 @@ void LevelEditorInit()
 		pd->file->unlink("sokoban_temp.lev", false);
 		StageReload=false;
 	}
-	buttonIgnoreFrames = 50;
+	buttonIgnoreFramesLevelEditor = 50;
 }
 
 void LevelEditor()
@@ -106,7 +106,7 @@ void LevelEditor()
 	bool response;
 	int id;
 	if(AskingQuestion)
-		buttonIgnoreFrames = 25;
+		buttonIgnoreFramesLevelEditor = 25;
 	if (!AskingQuestion)
 	{
 		pd->graphics->drawBitmap(IMGBackground,0,0,kBitmapUnflipped);
@@ -123,10 +123,10 @@ void LevelEditor()
 		}
 
 		int crankMove = crankUpdate();
-		buttonIgnoreFrames--;
-		if (buttonIgnoreFrames < 0)
-			buttonIgnoreFrames = 0;
-		if ((buttonIgnoreFrames <= 0) && (currButtons & kButtonA))
+		buttonIgnoreFramesLevelEditor--;
+		if (buttonIgnoreFramesLevelEditor < 0)
+			buttonIgnoreFramesLevelEditor = 0;
+		if ((buttonIgnoreFramesLevelEditor <= 0) && (currButtons & kButtonA))
 		{
 			if (!(prevButtons & kButtonA))
 				frameAStart = framecount;
@@ -277,7 +277,7 @@ void LevelEditor()
 				frameLeftStart = framecount;
 			if ((framecount - frameLeftStart) % LevelEditorUpdateTicks == 0)
 			{
-				buttonIgnoreFrames = 0;
+				buttonIgnoreFramesLevelEditor = 0;
 				CSelector_MoveLeft(Selector);
 			}
 		}
@@ -288,7 +288,7 @@ void LevelEditor()
 				frameRightStart = framecount;
 			if ((framecount - frameRightStart) % LevelEditorUpdateTicks == 0)
 			{
-				buttonIgnoreFrames = 0;
+				buttonIgnoreFramesLevelEditor = 0;
 				CSelector_MoveRight(Selector);
 			}
 		}
@@ -299,7 +299,7 @@ void LevelEditor()
 				frameUpStart = framecount;
 			if ((framecount - frameUpStart) % LevelEditorUpdateTicks == 0)
 			{
-				buttonIgnoreFrames = 0;
+				buttonIgnoreFramesLevelEditor = 0;
 				CSelector_MoveUp(Selector);
 			}
 		}
@@ -310,20 +310,20 @@ void LevelEditor()
 				frameDownStart = framecount;
 			if ((framecount - frameDownStart) % LevelEditorUpdateTicks == 0)
 			{
-				buttonIgnoreFrames = 0;
+				buttonIgnoreFramesLevelEditor = 0;
 				CSelector_MoveDown(Selector);
 			}
 		}
 
 		if (crankMove == CRANKMOVELEFT)
 		{
-			buttonIgnoreFrames = 0;
+			buttonIgnoreFramesLevelEditor = 0;
 			CSelector_DecSelection(Selector);
 		}
 
 		if (crankMove == CRANKMOVERIGHT)
 		{
-			buttonIgnoreFrames = 0;
+			buttonIgnoreFramesLevelEditor = 0;
 			CSelector_IncSelection(Selector);
 		}
 
