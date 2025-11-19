@@ -37,7 +37,7 @@ void LevelEditorMenu()
 		printTitleInfo();
 		pd->graphics->fillRect(40 * UI_WIDTH_SCALE, 70 * UI_HEIGHT_SCALE, 240 * UI_WIDTH_SCALE, 100 * UI_HEIGHT_SCALE, kColorWhite);
 		pd->graphics->drawRect(40 * UI_WIDTH_SCALE, 70 * UI_HEIGHT_SCALE, 240 * UI_WIDTH_SCALE, 100 * UI_HEIGHT_SCALE, kColorBlack);
-		pd->graphics->drawRect(41 * UI_WIDTH_SCALE, 71.5 * UI_HEIGHT_SCALE, 238 * UI_WIDTH_SCALE, 97.5 * UI_HEIGHT_SCALE, kColorBlack);
+		pd->graphics->drawRect(42 * UI_WIDTH_SCALE, 72 * UI_HEIGHT_SCALE, 237 * UI_WIDTH_SCALE, 97 * UI_HEIGHT_SCALE, kColorBlack);
 		pd->system->formatString(&Tekst,"Create New Levelpack\nLoad Selected LevelPack\nDelete Selected Levelpack\n<%s>\nMain Menu",LevelPackName);
 		drawText(BigFont,Tekst,strlen(Tekst),kASCIIEncoding, 70 * UI_WIDTH_SCALE, 77 * UI_HEIGHT_SCALE);
 		pd->system->realloc(Tekst, 0);
@@ -162,7 +162,7 @@ void LevelEditorMenu()
 					if (InstalledLevelPacksCount >0)
 					{
 						playMenuSelectSound();
-						pd->system->formatString(&Tekst,"do you want to delete the selected level pack:\n\"%s\"\nAll Levels in Levelpack will be deleted !!!\n\nPress A to Delete, X to Cancel",InstalledLevelPacks[SelectedLevelPack]);
+						pd->system->formatString(&Tekst,"do you want to delete the selected level pack:\n\"%s\"\nAll Levels in Levelpack will be deleted !!!\n\nPress A to Delete, B to Cancel",InstalledLevelPacks[SelectedLevelPack]);
 						AskQuestion(IDDeleteLevelPack, Tekst);
 						pd->system->realloc(Tekst, 0);
 					}
