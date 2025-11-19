@@ -4,7 +4,6 @@
 
 #include <stdbool.h>
 
-void MusicFinished();
 void LoadSettings();
 void SaveSettings();
 void SearchForLevelPacks();

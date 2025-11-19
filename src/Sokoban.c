@@ -34,10 +34,8 @@ void setupGame()
 	LevelEditorMode = false;
 	LevelHasChanged = false;
 	StageReload = false;
-	ReloadMusic = false;
 	LevelPackName = NULL;
 	FileName = NULL;
-	isCustomnTitleScreen = false;
 	AskingQuestionID = -1;
 	MaxLenGetString = 0;
 	AskingQuestion = false;

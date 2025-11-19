@@ -11,13 +11,12 @@
 extern LCDBitmap *IMGBackground,*IMGFloor,*IMGPlayer,*IMGBox,*IMGSpot,*IMGEmpty,*IMGWall,*IMGTitleScreen;
 extern LCDFont* font,* BigFont, *RobotoMedium;
 extern int GameState;
-extern int Selection,MusicCount,SelectedMusic,InstalledLevelPacksCount,InstalledLevels,SelectedLevel,SelectedLevelPack,UnlockedLevels,GetStringId,GetStringX,GetStringY;
-extern bool LevelEditorMode,LevelHasChanged,StageReload,ReloadMusic;
+extern int Selection,InstalledLevelPacksCount,InstalledLevels,SelectedLevel,SelectedLevelPack,UnlockedLevels,GetStringId,GetStringX,GetStringY;
+extern bool LevelEditorMode,LevelHasChanged,StageReload;
 extern CWorldParts* WorldParts;
 extern CLevelPackFile *LevelPackFile;
 extern char *LevelPackName;
 extern char InstalledLevelPacks[MaxLevelPacks][MaxLevelPackNameLength];
-extern bool isCustomnTitleScreen;
 extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
 extern char *FileName;

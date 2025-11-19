@@ -11,11 +11,6 @@ typedef struct {
 	char SelectedLevelPack[101];
 } SettingsData;
 
-void MusicFinished()
-{
-	ReloadMusic=true;
-}
-
 void LoadSettings()
 {
 	SDFile *Fp;
@@ -468,9 +463,6 @@ void LoadGraphics()
 	IMGEmpty = loadImageAtPath("graphics/empty.png");
 	IMGBackground = loadImageAtPath("graphics/background.png");
 	IMGTitleScreen = loadImageAtPath("graphics/titlescreen.png");
-
-
-	isCustomnTitleScreen = false;
 }
 
 void UnLoadGraphics()
