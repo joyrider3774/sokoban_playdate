@@ -14,26 +14,26 @@ void TitleScreenInit()
 	setCrankMoveThreshold(180);
 	Selection = 1;
 	SelectMusic(musTitle);
-	int tmp = SelectedLevelPack;
-	int total = 0;
-	if (InstalledLevelPacksCount > 0)
-	{
-		for (SelectedLevelPack = 0; SelectedLevelPack < InstalledLevelPacksCount; SelectedLevelPack++)
-		{
-			pd->system->formatString(&FileName, "levelpacks/%s", InstalledLevelPacks[SelectedLevelPack]);
-			if (!FileExists(FileName, false))
-			{
-				pd->system->realloc(FileName, 0);
-				pd->system->formatString(&FileName, "levelpacks/%s", InstalledLevelPacks[SelectedLevelPack]);
-			}
-			CLevelPackFile_loadFile(LevelPackFile, FileName, NrOfCols, NrOfRows, false);
-			//WorldParts->LoadFromLevelPackFile(LevelPackFile, SelectedLevel, true);
-			pd->system->realloc(FileName, 0);
-			total += LevelPackFile->LevelCount;
-		}
-	}
-	pd->system->logToConsole("total levels:%d\n", total);
-	SelectedLevelPack = tmp;
+	//int tmp = SelectedLevelPack;
+	//int total = 0;
+	//if (InstalledLevelPacksCount > 0)
+	//{
+	//	for (SelectedLevelPack = 0; SelectedLevelPack < InstalledLevelPacksCount; SelectedLevelPack++)
+	//	{
+	//		pd->system->formatString(&FileName, "levelpacks/%s", InstalledLevelPacks[SelectedLevelPack]);
+	//		if (!FileExists(FileName, false))
+	//		{
+	//			pd->system->realloc(FileName, 0);
+	//			pd->system->formatString(&FileName, "levelpacks/%s", InstalledLevelPacks[SelectedLevelPack]);
+	//		}
+	//		CLevelPackFile_loadFile(LevelPackFile, FileName, NrOfCols, NrOfRows, false);
+	//		//WorldParts->LoadFromLevelPackFile(LevelPackFile, SelectedLevel, true);
+	//		pd->system->realloc(FileName, 0);
+	//		total += LevelPackFile->LevelCount;
+	//	}
+	//}
+	//pd->system->logToConsole("total levels:%d\n", total);
+	//SelectedLevelPack = tmp;
 
 	if (InstalledLevelPacksCount > 0)
 	{
