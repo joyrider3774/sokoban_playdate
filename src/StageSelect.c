@@ -61,7 +61,6 @@ void StageSelect()
 {
 	int Teller;
 	char *Tekst;
-	char *Tekst1;
 	if (GameState == GSStageSelectInit)
 	{
 		StageSelectInit();
