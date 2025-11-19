@@ -189,7 +189,7 @@ void AskQuestion(int Id, char* Msg)
 
 void LoadNormalCreatorName()
 {
-	memset(NormalCreateName, 0, 21);
+	memset(NormalCreateName, 0, sizeof(NormalCreateName));
 	if (InstalledLevelPacksCount > 0)
 	{
 		pd->system->formatString(&FileName, "levelpacks/%s._lev/credits.dat", LevelPackName);
@@ -199,6 +199,8 @@ void LoadNormalCreatorName()
 			pd->system->formatString(&FileName, "levelpacks/%s/credits.dat", LevelPackName);
 		}
 		SDFile* Fp = pd->file->open(FileName, kFileReadData);
+		if(!Fp)
+			Fp = pd->file->open(FileName, kFileRead);
 		if (Fp)
 		{
 
