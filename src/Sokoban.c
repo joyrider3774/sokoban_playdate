@@ -51,6 +51,9 @@ void setupGame()
 	RobotoMedium = loadFontAtPath("fonts/Roboto-Black-24");
 	WorldParts = CWorldParts_Create();
 
+	//always create levelpack folder in data folder so people can find it
+	pd->file->mkdir("levelpacks");
+
 	SearchForLevelPacks();
 	LoadSettings();
 	initSound();
