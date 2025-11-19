@@ -31,6 +31,20 @@ void LoadSettings()
 			}
 		pd->file->close(Fp);
 	}
+	else
+	{
+		//default to SokWhole
+		for (int i = 0; i < InstalledLevelPacksCount; i++)
+			if (strcmp("SokWhole.sok", InstalledLevelPacks[i]) == 0)
+			{
+				SelectedLevelPack = i;
+				if (LevelPackName)
+					pd->system->realloc(LevelPackName, 0);
+				pd->system->formatString(&LevelPackName, "%s", InstalledLevelPacks[SelectedLevelPack]);
+				break;
+			}
+		pd->file->close(Fp);
+	}
 
 }
 
