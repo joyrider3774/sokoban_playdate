@@ -43,7 +43,6 @@ void LoadSettings()
 				pd->system->formatString(&LevelPackName, "%s", InstalledLevelPacks[SelectedLevelPack]);
 				break;
 			}
-		pd->file->close(Fp);
 	}
 
 }
