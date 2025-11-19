@@ -2,14 +2,16 @@
 ![DownloadCountTotal](https://img.shields.io/github/downloads/joyrider3774/sokoban_playdate/total?label=total%20downloads&style=plastic) ![DownloadCountLatest](https://img.shields.io/github/downloads/joyrider3774/sokoban_playdate/latest/total?style=plastic) ![LatestVersion](https://img.shields.io/github/v/tag/joyrider3774/sokoban_playdate?label=Latest%20version&style=plastic) ![License](https://img.shields.io/github/license/joyrider3774/sokoban_playdate?style=plastic)
 
 Playdoban is a remake of the classic sokoban game. 
+
 You as the player need to push boxes to specific locations in the level. 
 Once all boxes are pushed to the correct spots the level is finished. 
-Playdoban is basically a sokoban engine, it contains all the game rules and has the ability to use level packs. 
-It's possible to create your own levelpacks using the built in Level editor. 
-Each level pack can also have customized graphics and menu colors. 
-The game engine also has an undo system up to 1000 moves, and have custom 25 music files loaded up. 
 
-This version is a cleanup of my old gp2x version, using open source assets and adapted code
+Playdoban is basically a sokoban engine, it contains all the game rules and has the ability to use level packs. 
+It's possible to create your own levelpacks using the built in Level editor and share them with other players.
+The game comes preloaded with a select few ascii (.sok / .txt) levelpacks with a total amount of nearly 2000 levels to start with but you can download more from the internet. 
+The game engine also has an undo system for up to 1000 moves. 
+
+This version is a cleanup of my old gp2x version, using open source assets and adapted code.
 
 ## Screenshots
 ![screenshot 1](screenshots/screenshot1.png)
@@ -18,36 +20,44 @@ This version is a cleanup of my old gp2x version, using open source assets and a
 ![screenshot 4](screenshots/screenshot4.png)
 
 ## Game Features:
-- Multiple Levels spread over different (default) level packs (Max 1000 level packs)
-- Max 25x15 level size, will filter ascii sets if levels are too big
+- Multiple Levels spread over different (default) level packs (Max 1000 level packs, about 2000 preinstalled levels)
+- Max 25x15 level size, game will filter ascii sets if levels are too big
 - Level Editor (Create your own Level Packs)
 - Supports ascii (.sok / .txt) level sets
 - Autosaves progress
-- Add your own music files
-- Customize Levelpack colors and graphics
-- Joystick and Keyboard input
+- Undo System up to a 1000 moves
+- Windows, Mac and HTML versions available with colored graphics if you wish to use them.
 
 ## Playing the Game:
 Playdoban Will start up at a main menu, here you can choose the level pack you wish to edit or play by using left and right when the level pack name is selected (it's between "<>" signs).
-If you are new to Sokoban i suggest that you play the "pimpernel" or "SokWhole" level pack since these are not so hard to solve. 
+If you are new to Sokoban i suggest that you play the "pimpernel" or "SokWhole" level pack first since these are not so hard to solve. 
 When a level pack is loaded either for game play or level editing, the level selector will show up. Here you select what level you wish to edit or play, if it has been unlocked yet.
 After you solved a level one extra level will be unlocked. you always have to solve to last unlocked level in order to unlock the next one.
 
 ### Level Packs
 If you wish to create levels yourself, load up the level editor and create a new level pack. You can choose a name for the levelpack by using up down left right and confirm the name by using A. 
-There is a space sign included decrease the selected sign to go to it. Once a new level pack has been created you can then load it, and you will be in the level selector. 
-just A or select "Create Level" from the menu and start creating your own levels. The level editor will know when a level has been changed, so it will ask you, 
+Once a new level pack has been created you can then load it, and you will be in the level selector. 
+just press A or select "Create Level" from the menu and start creating your own levels. The level editor will know when a level has been changed, so it will ask you, 
 if you want to save whenever you quit back to the level selector. The level editor will also automatically choose a filename for the levels, you don't need to worry about this. 
 Once your level pack is finished you can just zip your level pack directory and release it to the public. They will then have to unzip your level pack in the level packs directory and it will be shown inside the game.
 
 User made levels and packs are saved in the "levelpacks" folder from the games data folder. 
 
-### Sok/txt (ascii) Level Packs
+#### Level Packs Naming
+Newly made levelpacks on the playdate are names `[name]._lev`, if you want to release this level pack for other people to play it, it is best that you rename the folder to just `[name]` leaving out `._lev` at the end.
+This will make sure that users when they place your level pack in the levelpacks subfolder of the game's data folder can't delete it from within the game.
+
+#### Deleting Level packs
+You can only delete level packs that you created yourself using the build in delete level pack option, so basically levelpacks named `[name]._lev` as folder. if you edited levels for existing level packs it will only delete those modified or newly created levels.
+
+#### Sok/txt (ascii) Level Packs
 This version of sokoban supports .sok and .txt files that define sokoban levels in a text file format. 
 There are only a select few of these preinstalled but you can however get extra of such files from the following sites:
 
 * http://sokobano.de/en/levels.php  (use exception to allow http) click the little blue download icons
 * https://www.sourcecode.se/sokoban/levels.php click a level pack and click on the little T icon to download a text level pack
+
+Once downloaded copy them in the levelpacks subfolder of the game's data folder
 
 ## Controls
 
