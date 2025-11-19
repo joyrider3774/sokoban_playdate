@@ -14,13 +14,7 @@ void TitleScreenInit()
 	setCrankMoveThreshold(180);
 	Selection = 1;
 	SelectMusic(musTitle);
-	if (InstalledLevelPacksCount > 0)
-	{
-		pd->system->formatString(&FileName, "levelpacks/%s", LevelPackName);
-		CLevelPackFile_loadFile(LevelPackFile,FileName, NrOfCols, NrOfRows, true);
-		pd->system->realloc(FileName, 0);
-		LoadNormalCreatorName();
-	}
+	int tmp = SelectedLevelPack;
 	int total = 0;
 	if (InstalledLevelPacksCount > 0)
 	{
@@ -39,6 +33,15 @@ void TitleScreenInit()
 		}
 	}
 	pd->system->logToConsole("total levels:%d\n", total);
+	SelectedLevelPack = tmp;
+
+	if (InstalledLevelPacksCount > 0)
+	{
+		pd->system->formatString(&FileName, "levelpacks/%s", LevelPackName);
+		CLevelPackFile_loadFile(LevelPackFile, FileName, NrOfCols, NrOfRows, true);
+		pd->system->realloc(FileName, 0);
+		LoadNormalCreatorName();
+	}
 }
 
 
