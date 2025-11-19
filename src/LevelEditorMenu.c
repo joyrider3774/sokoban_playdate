@@ -162,7 +162,7 @@ void LevelEditorMenu()
 					if (InstalledLevelPacksCount >0)
 					{
 						playMenuSelectSound();
-						pd->system->formatString(&Tekst,"do you want to delete the selected level pack:\n\"%s\"\nAll Levels in Levelpack will be deleted !!!\n\nPress A to Delete, B to Cancel",InstalledLevelPacks[SelectedLevelPack]);
+						pd->system->formatString(&Tekst,"do you want to delete the selected level pack:\n\"%s\"\nAll Levels in Levelpack will be deleted !!!\n\nPress (A) to Delete, (B) to Cancel",InstalledLevelPacks[SelectedLevelPack]);
 						AskQuestion(IDDeleteLevelPack, Tekst);
 						pd->system->realloc(Tekst, 0);
 					}
