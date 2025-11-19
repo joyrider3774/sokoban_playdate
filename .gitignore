@@ -64,3 +64,4 @@ dkms.conf
 /build_simulator
 /build_device
 /.vscode
+/Source/pdex.bin
