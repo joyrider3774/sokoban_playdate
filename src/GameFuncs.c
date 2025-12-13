@@ -300,6 +300,8 @@ void getStringDraw(char* StringBuffer, bool ErasingPrevious)
 {
 	char* textBuffer;
 	size_t len = strlen(StringBuffer);
+	if (len == 0)
+		return;
 	textBuffer = pd->system->realloc(NULL, len + 3);
 	memset(textBuffer, 0, len + 3);
 	strcpy(textBuffer, StringBuffer);
