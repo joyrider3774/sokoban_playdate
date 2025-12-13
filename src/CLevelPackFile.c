@@ -196,6 +196,9 @@ bool CLevelPackFile_parseText(CLevelPackFile *LPackFile, char* text, int maxWidt
 				(levelMeta->maxy+1 <= maxHeight))
 			{
 				LPackFile->LevelCount++;
+				//don't exceed limits
+				if (LPackFile->LevelCount >= MAXLEVELS)
+					return true;
 				levelMeta = &(LPackFile->LevelsMeta)[LPackFile->LevelCount];
 			}
 			continue;
