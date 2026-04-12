@@ -14,6 +14,7 @@
 #include "Sound.h"
 #include "Common.h"
 #include "pd_api.h"
+#include "Menus.h"
 
 
 
@@ -77,6 +78,7 @@ void terminateGame()
 	font = NULL;
 	BigFont = NULL;
 	RobotoMedium = NULL;
+	DestroyMenuItems();
 }
 
 
