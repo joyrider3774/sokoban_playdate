@@ -47,7 +47,6 @@ void TitleScreenInit()
 
 void TitleScreen()
 {
-	uint8_t * frame = pd->graphics->getFrame();
     int Teller;
 	char* Tekst;
 	
